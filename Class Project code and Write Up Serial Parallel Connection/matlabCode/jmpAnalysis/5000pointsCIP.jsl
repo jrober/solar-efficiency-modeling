@@ -1,0 +1,27 @@
+
+Fit Model(
+	Y( :maxPower ),
+	Effects(
+		:temperature,
+		:numCells,
+		:temperature * :numCells,
+		:shadingPercent,
+		:temperature * :shadingPercent,
+		:numCells * :shadingPercent,
+		:temperature * :numCells * :shadingPercent,
+		:parallelSerial,
+		:temperature * :parallelSerial,
+		:numCells * :parallelSerial,
+		:temperature * :numCells * :parallelSerial,
+		:shadingPercent * :parallelSerial,
+		:temperature * :shadingPercent * :parallelSerial,
+		:numCells * :shadingPercent * :parallelSerial,
+		:temperature * :numCells * :shadingPercent * :parallelSerial,
+		:temperature * :temperature,
+		:numCells * :numCells,
+		:shadingPercent * :shadingPercent,
+		:parallelSerial * :parallelSerial
+	),
+	Personality( "Stepwise" ),
+	Run( Stopping Rule( "Minimum AICc" ) )
+);
